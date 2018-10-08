@@ -4,9 +4,9 @@
  <% @blogs.each do |blog| %>
    <tr>
      <td><%= blog.content %></td>
-     <td><span class="label label-info"><%= link_to '詳しく見る', blog_path(blog.id) %></span></td>
-     <td><span class="label label-success"><%= link_to "やり直す", edit_blog_path(blog.id) %></span></td>
-     <td><span class="label label-danger"><%= link_to '削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></span></td>
+     <td><div class="col-xs-1 col-sm-4 col-md-4"><span class="label label-info"><%= link_to '詳しく見る', blog_path(blog.id) %></span></div></td>
+     <td><div class="col-xs-1 col-sm-4 col-md-4"><span class="label label-success"><%= link_to "やり直す", edit_blog_path(blog.id) %></span></div></td>
+     <td><div class="col-xs-1 col-sm-4 col-md-4"><span class="label label-danger"><%= link_to '削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></span></div></td>
    </tr>
  <% end %>
 </table>
