@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tweets</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav class="menu">
+        <ul class="row">
+            <li class="col-md-4"><%= link_to '一覧', blogs_path %></li>
+            <li class="col-md-4"><%= link_to 'Tweetsする', new_blog_path %></li>
+        </ul>
+    </nav>
+  </header>
+<%= yield %>
+
+  <footer>
+    <p>運営会社DIVE INTO CODE株式会社</p>
+    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+  </footer>
+</body>
+</html>
