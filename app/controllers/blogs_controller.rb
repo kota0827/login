@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
+   before_action :require_login, only: [:show, :edit, :update, :destroy]
    before_action :set_blog, only: [:show, :edit, :update, :destroy]
-   
+  
   def index
     @blogs=Blog.all
   end
@@ -62,4 +63,11 @@ end
     @blog = Blog.find(params[:id])
   end
   
+  def require_login
+    unless logged_in?
+      flash[:error] = "ログインしてください"
+      redirect_to new_session_path
+    end
+  end
+
 end
